@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Diagrama</title>
+   <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="mother">
+        <div class="box1">
+           <img src="profile.webp" alt="">
+           <h1>Player 1</h1>
+           <div class="Juegos">
+                <h2 id="ganadoPlayer1">Ganado: 0</h2>
+                <h2 id="perdidoPlayer1">Perdido: 0</h2>
+           </div>
+        </div>
+        <div class="box2">
+            <img src="profile.webp" alt="">
+            <h1>Player 2</h1>
+            <div class="Juegos">
+                <h2 id="ganadoPlayer2">Ganado: 0</h2>
+                <h2 id="perdidoPlayer2">Perdido: 0</h2>
+           </div>
+        </div>
+        <div class="Boton">
+            <button class="button" onclick="redirigir()">Jugar</button>
+            <script>
+                function redirigir() {
+                  // Cambia 'otra_pagina.html' por la URL de la página a la que deseas redirigir
+                  window.location.href = 'Juego.html';
+                }
+                
+                // Agrega una función para actualizar el contador en función del resultado del juego
+                function actualizarContador(ganador) {
+                    if (ganador === 'Player 1') {
+                        document.getElementById('ganadoPlayer1').innerText = 'Ganado: ' + (parseInt(document.getElementById('ganadoPlayer1').innerText.split(': ')[1]) + 1);
+                        document.getElementById('perdidoPlayer2').innerText = 'Perdido: ' + (parseInt(document.getElementById('perdidoPlayer2').innerText.split(': ')[1]) + 1);
+                    } else if (ganador === 'Player 2') {
+                        document.getElementById('ganadoPlayer2').innerText = 'Ganado: ' + (parseInt(document.getElementById('ganadoPlayer2').innerText.split(': ')[1]) + 1);
+                        document.getElementById('perdidoPlayer1').innerText = 'Perdido: ' + (parseInt(document.getElementById('perdidoPlayer1').innerText.split(': ')[1]) + 1);
+                    }
+                }
+              </script>
+        </div>
+    </div>
+</body>
+</html>

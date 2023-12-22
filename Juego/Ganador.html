@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ganador</title>
+   <link rel="stylesheet" href="Ganador.css">
+</head>
+<body>
+    <div class="mother">
+        <div class="box3">
+           <img src="profile.webp" alt="">
+           <h1 class="Juegos"></h1> <!-- Agrega una clase para seleccionar este elemento -->
+           <script>
+            function mostrarGanador() {
+                // Leer la cookie
+                var ganador = document.cookie.replace(/(?:(?:^|.*;\s*)ganador\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+                // Mostrar al ganador en la página
+                var mensajeGanador = document.createElement("h1");
+                mensajeGanador.textContent = ganador + " ganó";
+                document.querySelector(".Juegos").appendChild(mensajeGanador);
+            }
+
+            function redirigir() {
+                window.location.href = 'index.html';
+            }
+
+            // Llama a la función para mostrar el ganador cuando se carga la página
+            window.onload = mostrarGanador;
+          </script>
+           <div class="Boton">
+            <button class="button" onclick="redirigir()">Inicio</button>
+        </div>
+        </div>
+        
+    </div>
+</body>
+</html>
